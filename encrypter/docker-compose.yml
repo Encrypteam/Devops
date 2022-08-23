@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  encrypter:
+    container_name: encrypter-ms
+    image: encrypter-ms:dev
+    networks:
+      - red
+    restart: always
+    ports:
+      - 5000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.encrypter.rule=Host(`encrypter.encrypteam.localhost`)"
+      - "traefik.http.routers.encrypter.tls=true"
+      - "traefik.http.services.encrypter.loadbalancer.server.port=5000"
+
+networks:
+  red:
+    external: true

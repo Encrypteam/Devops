@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
+#    security_opt:
+#      - no-new-privileges:true
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+       - /var/run/docker.sock:/var/run/docker.sock:ro
+       - ./config/traefik.yml:/etc/traefik/traefik.yml:ro
+       - ./config/config.yml:/etc/traefik/config.yml:ro
+       - ./certs:/etc/cercdts:ro
+    networks:
+        - red
+    labels:
+       - "traefik.enable=true"
+       - "traefik.http.routers.traefik=true"
+ 
+networks:
+  red:
+   external: true

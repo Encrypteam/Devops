@@ -1,0 +1,14 @@
+http:
+  routers:
+    traefik:
+      rule: "Host(`traefik.encrypteam.localhost`)"
+      service: "api@internal"
+      tls:
+        domains:
+          - main: "encrypteam.localhost"
+            sans:
+               - "*.encrypteam.localhost"
+tls:
+  certificates:
+    - certFile: "/etc/certs/cert-local.pem"
+      keyFile: "/etc/certs/key-local.pem"
