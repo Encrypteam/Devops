@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  userflask:
+    container_name: user-ms
+    image: user-ms:consul
+    environment:
+      - PORT=5000
+      - DATABASE_NAME=${MYSQL_DATABASE}
+      - DATABASE_PORT=3306
+      - DATABASE_URL=mysql-servidor
+      - DATABASE_USER=${MYSQL_USER}
+      - DATABASE_PASSWORD=${MYSQL_PASSWORD}
+      - CONSUL_HOST=172.20.0.4
+    networks:
+      - red
+    restart: always
+    ports:
+      - 6000:5000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.userflask.rule=Host(`users.encrypteam.localhost`)"
+      - "traefik.http.routers.userflask.tls=true"
+      - "traefik.http.services.userflask.loadbalancer.server.port=5000"
+
+networks:
+  red:
+    external: true

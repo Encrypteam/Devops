@@ -10,6 +10,13 @@ providers:
     endpoint: "unix:///var/run/docker.sock"
     watch: true
     exposedByDefault: false
+  consulCatalog:
+    refreshInterval: 30s
+    connectAware: true
+    serviceName: "traefik"
+    endpoint:
+      address: 	172.20.0.4:8500
+      datacenter: dc
   file:
     filename: /etc/traefik/config.yml
     watch: true

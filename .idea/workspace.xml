@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa350968-6a57-42cf-b19b-c884ce9bd77a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/consul/data/serf/local.snapshot" beforeDir="false" afterPath="$PROJECT_DIR$/consul/data/serf/local.snapshot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encrypter/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/encrypter/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traefik/config/traefik.yml" beforeDir="false" afterPath="$PROJECT_DIR$/traefik/config/traefik.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +26,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "291530",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/delfina/EncrypterMicroService",
-    "settings.editor.selected.configurable": "MTConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;291530&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/delfina/EncrypterMicroService&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Docker.encrypter.encrypter: Compose Deployment">
     <configuration name="encrypter: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
