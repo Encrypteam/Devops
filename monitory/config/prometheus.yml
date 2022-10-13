@@ -1,0 +1,23 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'encrypter'
+    scrape_interval: 5s
+    scheme: https
+    static_configs:
+      - targets: [ 'encrypter.encrypteam.localhost' ]
+
+
+
+  - job_name: 'user'
+    scrape_interval: 5s
+    scheme: https
+    static_configs:
+      - targets: [ 'users.encrypteam.localhost']
+

@@ -24,3 +24,11 @@ alive: ds 172.20.0.4:8301
 event-clock: 12
 alive: ds 172.20.0.4:8301
 event-clock: 13
+alive: ds 172.19.0.4:8301
+event-clock: 14
+alive: ds 172.19.0.3:8301
+event-clock: 15
+alive: ds 172.19.0.4:8301
+event-clock: 16
+alive: ds 172.19.0.4:8301
+event-clock: 17

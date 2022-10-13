@@ -2,8 +2,9 @@ version: '3.3'
 
 services:
   encrypter:
-    container_name: encrypter-ms
-    image: encrypter-ms:dev
+    image: encrypter-ms:consul
+    environment:
+      - CONSUL_HOST=172.19.0.4
     networks:
       - red
     restart: always

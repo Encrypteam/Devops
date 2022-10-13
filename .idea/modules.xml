@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Devops.iml" filepath="$PROJECT_DIR$/.idea/Devops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../EncrypterMicroService/.idea/EncrypterMicroService.iml" filepath="$PROJECT_DIR$/../EncrypterMicroService/.idea/EncrypterMicroService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UserMicroService/.idea/UserMicroService.iml" filepath="$PROJECT_DIR$/../UserMicroService/.idea/UserMicroService.iml" />
+    </modules>
+  </component>
+</project>

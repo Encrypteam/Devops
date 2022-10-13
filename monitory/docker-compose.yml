@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  prometheus:
+    networks:
+      - red
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./config/:/etc/prometheus/:rw
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+
+  grafana:
+    networks:
+      - red
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./datasource.yml:/etc/grafana/provisioning/datasource/datasource.yml
+    depends_on:
+      - prometheus
+
+networks:
+  red:
+    external: true
