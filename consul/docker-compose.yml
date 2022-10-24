@@ -13,6 +13,11 @@ services:
       - ./config:/consul/config
       - ./data:/consul/data:rw
       - ./ca:/consul/ca
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.consul.rule=Host(`consul.encrypteam.localhost`)"
+      - "traefik.http.routers.consul.tls=true"
+      - "traefik.http.services.consul.loadbalancer.server.port=8500"
     command: agent -bind 0.0.0.0 -disable-host-node-id=true
 networks:
   red:
