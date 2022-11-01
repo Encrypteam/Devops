@@ -1,4 +1,6 @@
 {
+  "skip_leave_on_interrupt": true,
+  "leave_on_terminate" : false,
   "datacenter": "dc",
   "domain": "consul",
   "node_name": "ds",

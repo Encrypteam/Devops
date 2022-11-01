@@ -1,21 +1,24 @@
 version: "3.3"
 services:
   elasticsearch:
+    container_name: elasticsearch
     image: elasticsearch:7.14.2
     environment:
-      - ELASTICSEARCH_USERNAME=elastic
-      - ELASTIC_PASSWORD=elastic
+      - ELASTICSEARCH_USERNAME=${ELASTICSEARCH_USERNAME}
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - ES_JAVA_OPTS=-Xms960m -Xmx3840m
       - "discovery.type=single-node"
     ports:
       - "9200:9200"
       - "9300:9300"
     volumes:
-      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./elasticsearch/data:/usr/share/elasticsearch/data/:rw
+      - ./elasticsearch/config/elasticsearch.yml:/var/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/data:/var/share/elasticsearch/data/:rw
     networks:
       - red
+  
   logstash:
+    container_name: logstash
     image: logstash:7.14.2
     ports:
       - "5044:5044"
@@ -24,12 +27,14 @@ services:
       - "9600:9600"
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash/pipeline:/usr/share/logstash/pipeline.yml
+      - ./logstash/pipeline:/var/share/logstash/pipeline
     depends_on:
       - elasticsearch
     networks:
       - red
+  
   kibana:
+    container_name: kibana
     image: kibana:7.14.2
     volumes:
       - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
@@ -39,6 +44,7 @@ services:
       - elasticsearch
     networks:
       - red
+
 networks:
   red:
     external: true

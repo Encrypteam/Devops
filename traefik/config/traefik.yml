@@ -15,7 +15,7 @@ providers:
     connectAware: true
     serviceName: "traefik"
     endpoint:
-      address: 	172.20.0.4:8500
+      address: 	172.19.0.4:8500
       datacenter: dc
   file:
     filename: /etc/traefik/config.yml
